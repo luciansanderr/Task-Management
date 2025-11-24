@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    container_name: app-tarefas
+    environment:
+      POSTGRES_DB: app-tarefas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    networks:
+      - laravelnet
+
+networks:
+  laravelnet:
+    driver: bridge
